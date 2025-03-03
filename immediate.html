@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenis issue #443</title>
+    <link
+      href="https://unpkg.com/lenis@1.1.22/dist/lenis.css"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="box">
+      <p>Scroll down to next section</p>
+    </div>
+    <div class="box">
+      <p>Reload page: page does not scroll immediately to top.</p>
+      <p>
+        The behavior is inconsistent, sometimes it scroll to top after a manual
+        scroll, other times it goes to top and back down (flicker).
+      </p>
+      <a href="./index.html">Go to default</a>
+    </div>
+    <script src="https://unpkg.com/lenis@1.1.22/dist/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        autoRaf: true,
+      });
+
+      lenis.scrollTo(0, {
+        immediate: true,
+        onComplete: () => {
+          console.log("Enable scroll.");
+        },
+      });
+    </script>
+  </body>
+</html>

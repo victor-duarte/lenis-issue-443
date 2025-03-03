@@ -1,0 +1,25 @@
+body,
+h1,
+h2 {
+  margin: 0;
+}
+
+body {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.box {
+  background-color: #1b458f;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.box:nth-child(1) {
+  background-color: #c4122e;
+}
